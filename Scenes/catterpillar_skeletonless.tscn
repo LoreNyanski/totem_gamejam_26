@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c6edql3i28m8v" path="res://Assests/CaterPillerB.png" id="3_4bqji"]
 [ext_resource type="Script" uid="uid://c5cdejattkde" path="res://Scripts/cursor.gd" id="3_axev3"]
 [ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="4_isc0u"]
+[ext_resource type="Script" uid="uid://cytxqu03wpx1s" path="res://Scripts/camera.gd" id="6_cr6i1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cr6i1"]
 atlas = ExtResource("3_4bqji")
@@ -146,3 +147,7 @@ grip_action = "Grip5"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Head" unique_id=1078460514]
 visible = false
 sprite_frames = SubResource("SpriteFrames_h22po")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=487342008 node_paths=PackedStringArray("followed_node")]
+script = ExtResource("6_cr6i1")
+followed_node = NodePath("../Middle")
