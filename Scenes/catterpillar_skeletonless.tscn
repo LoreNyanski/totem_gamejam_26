@@ -2,34 +2,48 @@
 
 [ext_resource type="PackedScene" uid="uid://8d3ym0yo0a12" path="res://Scenes/catterpillar_segment.tscn" id="1_5fwk0"]
 [ext_resource type="Script" uid="uid://csxcm27v4whsb" path="res://Scripts/catterpillar_skeletonless.gd" id="1_y5300"]
+[ext_resource type="Script" uid="uid://c5cdejattkde" path="res://Scripts/cursor.gd" id="3_axev3"]
+[ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="4_isc0u"]
 
 [node name="Catterpillar" type="Node2D" unique_id=38123875 node_paths=PackedStringArray("segments")]
 script = ExtResource("1_y5300")
-segments = [NodePath("Catterpillar_segment"), NodePath("Catterpillar_segment2"), NodePath("Catterpillar_segment3")]
+segments = [NodePath("Ass"), NodePath("Middle"), NodePath("Head")]
 
-[node name="Catterpillar_segment" parent="." unique_id=142510618 instance=ExtResource("1_5fwk0")]
+[node name="Ass" parent="." unique_id=142510618 instance=ExtResource("1_5fwk0")]
+position = Vector2(-21, 0)
+mass = 0.5
 grip_action = "Grip1"
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." unique_id=1476572035]
-node_a = NodePath("../Catterpillar_segment")
-node_b = NodePath("../Catterpillar_segment2")
+position = Vector2(-11, 0)
+rotation = -1.5707964
+node_a = NodePath("../Ass")
+node_b = NodePath("../Middle")
 disable_collision = false
-length = 20.0
-rest_length = 5.0
-stiffness = 64.0
+length = 10.0
+rest_length = 1.0
 
-[node name="Catterpillar_segment2" parent="." unique_id=48501730 instance=ExtResource("1_5fwk0")]
-position = Vector2(19, -16)
+[node name="Middle" parent="." unique_id=48501730 instance=ExtResource("1_5fwk0")]
 grip_action = "Grip2"
 
-[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="." unique_id=1559173731]
-node_a = NodePath("../Catterpillar_segment2")
-node_b = NodePath("../Catterpillar_segment3")
-disable_collision = false
-length = 20.0
-rest_length = 5.0
-stiffness = 64.0
+[node name="Cursor" type="Node2D" parent="Middle" unique_id=1748558029]
+script = ExtResource("3_axev3")
+radius = 80
 
-[node name="Catterpillar_segment3" parent="." unique_id=650862274 instance=ExtResource("1_5fwk0")]
-position = Vector2(40, -4)
+[node name="Sprite2D" type="Sprite2D" parent="Middle/Cursor" unique_id=2025542612]
+position = Vector2(-2.3841858e-07, -5.9604645e-08)
+scale = Vector2(0.06250001, 0.062499993)
+texture = ExtResource("4_isc0u")
+
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="." unique_id=1559173731]
+position = Vector2(10, 0)
+rotation = -1.5707964
+node_a = NodePath("../Middle")
+node_b = NodePath("../Head")
+disable_collision = false
+length = 10.0
+rest_length = 1.0
+
+[node name="Head" parent="." unique_id=650862274 instance=ExtResource("1_5fwk0")]
+position = Vector2(21, 0)
 grip_action = "Grip3"
