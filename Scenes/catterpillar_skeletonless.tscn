@@ -2,8 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://8d3ym0yo0a12" path="res://Scenes/catterpillar_segment.tscn" id="1_5fwk0"]
 [ext_resource type="Script" uid="uid://csxcm27v4whsb" path="res://Scripts/catterpillar_skeletonless.gd" id="1_y5300"]
-[ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="3_axev3"]
-[ext_resource type="Script" uid="uid://c5cdejattkde" path="res://Scripts/cursor.gd" id="3_axev3"]
+[ext_resource type="Script" path="res://Scripts/cursor.gd" id="3_axev3"]
 [ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="4_isc0u"]
 
 [node name="Catterpillar" type="Node2D" unique_id=38123875 node_paths=PackedStringArray("segments")]
@@ -15,11 +14,10 @@ position = Vector2(-21, 0)
 mass = 0.5
 grip_action = "Grip1"
 
-[node name="Camera2D" type="Camera2D" parent="Catterpillar_segment" unique_id=1165740212]
+[node name="Catterpillar_segment#Camera2D" type="Camera2D" parent="." unique_id=1165740212]
 
-[node name="Icon" type="Sprite2D" parent="Catterpillar_segment" unique_id=945877991]
+[node name="Catterpillar_segment#Icon" type="Sprite2D" parent="." unique_id=945877991]
 scale = Vector2(0.1796875, 0.171875)
-texture = ExtResource("3_axev3")
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." unique_id=1476572035]
 position = Vector2(-11, 0)

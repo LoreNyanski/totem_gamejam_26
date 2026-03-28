@@ -27,3 +27,7 @@ func end_grip() -> void:
 	if gripper == null: return
 	gripper.queue_free()
 	gripped = false
+	
+func rotate_ray(rot : float) -> void:
+	grip_ray.rotation=rot
+	
