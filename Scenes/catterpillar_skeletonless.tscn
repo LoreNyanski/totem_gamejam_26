@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bh2on4ibicgjb"]
+
+[ext_resource type="PackedScene" uid="uid://8d3ym0yo0a12" path="res://Scenes/catterpillar_segment.tscn" id="1_5fwk0"]
+[ext_resource type="Script" uid="uid://csxcm27v4whsb" path="res://Scenes/catterpillar_skeletonless.gd" id="1_y5300"]
+
+[node name="Catterpillar" type="Node2D" unique_id=38123875 node_paths=PackedStringArray("segments")]
+script = ExtResource("1_y5300")
+segments = [NodePath("Catterpillar_segment"), NodePath("Catterpillar_segment2"), NodePath("Catterpillar_segment3")]
+
+[node name="Catterpillar_segment" parent="." unique_id=142510618 instance=ExtResource("1_5fwk0")]
+grip_action = "Grip1"
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." unique_id=1476572035]
+node_a = NodePath("../Catterpillar_segment")
+node_b = NodePath("../Catterpillar_segment2")
+disable_collision = false
+length = 20.0
+rest_length = 5.0
+stiffness = 64.0
+
+[node name="Catterpillar_segment2" parent="." unique_id=48501730 instance=ExtResource("1_5fwk0")]
+position = Vector2(19, -16)
+grip_action = "Grip2"
+
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="." unique_id=1559173731]
+node_a = NodePath("../Catterpillar_segment2")
+node_b = NodePath("../Catterpillar_segment3")
+disable_collision = false
+length = 20.0
+rest_length = 5.0
+stiffness = 64.0
+
+[node name="Catterpillar_segment3" parent="." unique_id=650862274 instance=ExtResource("1_5fwk0")]
+position = Vector2(40, -4)
+grip_action = "Grip3"

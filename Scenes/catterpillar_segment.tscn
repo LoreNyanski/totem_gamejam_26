@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://8d3ym0yo0a12"]
+
+[ext_resource type="Script" uid="uid://4gpf6xhyovls" path="res://Scenes/catterpillar_segment.gd" id="1_ev1qf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s51in"]
+
+[node name="Catterpillar_segment" type="RigidBody2D" unique_id=142510618]
+lock_rotation = true
+script = ExtResource("1_ev1qf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334811522]
+shape = SubResource("CircleShape2D_s51in")
+
+[node name="Gripper" type="RayCast2D" parent="." unique_id=1811916631]
+target_position = Vector2(0, 12)

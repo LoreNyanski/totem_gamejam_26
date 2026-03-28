@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://c0iwqbxh4irq7"]
+
+[ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="1_ixrsy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydnig"]
+
+[node name="Catterpillar" type="Node2D" unique_id=2118371645]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=356553926]
+position = Vector2(28, -0.5)
+scale = Vector2(0.46874997, 0.16406249)
+texture = ExtResource("1_ixrsy")
+
+[node name="Skeleton" type="Skeleton2D" parent="." unique_id=1908581793]
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton" unique_id=326156224]
+rest = Transform2D(0, 0, 0.07, 0, 0, 0)
+
+[node name="Bone2D2" type="Bone2D" parent="Skeleton" unique_id=1517933430]
+position = Vector2(20, 0)
+rest = Transform2D(0, 0, 0.07, 0, 0, 0)
+
+[node name="Bone2D3" type="Bone2D" parent="Skeleton" unique_id=52244115]
+position = Vector2(40, 0)
+rest = Transform2D(0, 0, 0.07, 0, 0, 0)
+
+[node name="PhysicsBones" type="Node2D" parent="." unique_id=799151200]
+
+[node name="PhysicalBone2D" type="PhysicalBone2D" parent="PhysicsBones" unique_id=471270205]
+bone2d_nodepath = NodePath("../../Skeleton/Bone2D2")
+bone2d_index = 1
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicsBones/PhysicalBone2D" unique_id=1239414501]
+position = Vector2(8, 0)
+shape = SubResource("CircleShape2D_ydnig")
+
+[node name="PhysicalBone2D2" type="PhysicalBone2D" parent="PhysicsBones" unique_id=1558807829]
+position = Vector2(20, 0)
+bone2d_nodepath = NodePath("../../Skeleton/Bone2D2")
+bone2d_index = 2
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicsBones/PhysicalBone2D2" unique_id=1205456698]
+position = Vector2(8, 0)
+shape = SubResource("CircleShape2D_ydnig")
+
+[node name="PhysicalBone2D3" type="PhysicalBone2D" parent="PhysicsBones" unique_id=2145087278]
+position = Vector2(40, 0)
+bone2d_nodepath = NodePath("../../Skeleton/Bone2D3")
+bone2d_index = 3
+simulate_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicsBones/PhysicalBone2D3" unique_id=2045853404]
+position = Vector2(8, 0)
+shape = SubResource("CircleShape2D_ydnig")
+
+[node name="Joints" type="Node2D" parent="." unique_id=2102976040]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Joints" unique_id=1857587960]
+position = Vector2(18, 0)
+node_a = NodePath("../../PhysicsBones/PhysicalBone2D")
+node_b = NodePath("../../PhysicsBones/PhysicalBone2D2")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Joints" unique_id=362150593]
+position = Vector2(38, 0)
+node_a = NodePath("../../PhysicsBones/PhysicalBone2D2")
+node_b = NodePath("../../PhysicsBones/PhysicalBone2D3")
