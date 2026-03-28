@@ -31,16 +31,39 @@ func _physics_process(delta: float) -> void:
 		var perpToSurf = Vector2(0,-1)
 		#print(rot)
 		#segments[seg].rotation =rot.angle_to(perpToSurf.normalized())
-		segments[seg].rotate_ray(rot.angle_to(perpToSurf.normalized()))
+		if not segments[seg].gripped:
+			segments[seg].rotate_pivot(rot.angle_to(perpToSurf.normalized()))
 		#print(segments[seg].rotation)
 	
-	for segment in segments:
-		var force = (cursor.global_position - segment.global_position) * grip_str() * 20
-		segment.apply_central_force(force)
-
+	var grip_dist = dist_to_grip()
+	var str = grip_str()
+	for i in segments.size():
+		var force = (cursor.global_position - segments[i].global_position).normalized() * grip_dist[i] * str * 500
+		print(force)
+		segments[i].apply_central_force(force)
 
 func grip_str() -> int:
 	var num_grips = 0
 	for segment in segments:
 		if segment.gripped: num_grips += 1
 	return num_grips
+	
+func dist_to_grip():
+	var grip_dist_array = []
+	var counter = 99
+	for segment in segments:
+		if segment.gripped: 
+			grip_dist_array.append(0)
+			counter = 0
+		else:
+			if not counter == 99: counter += 1
+			grip_dist_array.append(counter)
+	counter = -1
+	for i in range(segments.size()-1, -1, -1):
+		if segments[i].gripped: 
+			counter = 0
+		else:
+			if counter == -1: continue
+			counter += 1
+			grip_dist_array[i] = min(grip_dist_array[i], counter)
+	return grip_dist_array

@@ -2,14 +2,20 @@
 
 [ext_resource type="Script" uid="uid://4gpf6xhyovls" path="res://Scripts/catterpillar_segment.gd" id="1_ev1qf"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ev1qf"]
+friction = 0.2
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_s51in"]
 
 [node name="Catterpillar_segment" type="RigidBody2D" unique_id=142510618]
+physics_material_override = SubResource("PhysicsMaterial_ev1qf")
 lock_rotation = true
 script = ExtResource("1_ev1qf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334811522]
 shape = SubResource("CircleShape2D_s51in")
 
-[node name="Grip_ray" type="RayCast2D" parent="." unique_id=1811916631]
+[node name="Pivot" type="Node2D" parent="." unique_id=1728759149]
+
+[node name="Grip_ray" type="RayCast2D" parent="Pivot" unique_id=1811916631]
 target_position = Vector2(0, 14)

@@ -3,8 +3,9 @@ class_name Segment
 
 @export_enum("Grip1","Grip2","Grip3","Grip4","Grip5")
 var grip_action: String
-
-@onready var grip_ray: RayCast2D = $Grip_ray
+@onready var pivot: Node2D = $Pivot
+@onready var limiters: StaticBody2D = $Pivot/Limiters
+@onready var grip_ray: RayCast2D = $Pivot/Grip_ray
 var gripper: PinJoint2D
 var gripped: bool = false
 
@@ -12,7 +13,8 @@ var gripped: bool = false
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed(grip_action) and not gripped:
 		var surface = grip_ray.get_collider()
-		if surface != null: start_grip(surface)
+		if surface != null: 
+			if surface is not Segment: start_grip(surface)
 	if Input.is_action_just_released(grip_action):
 		end_grip()
 		
@@ -28,6 +30,6 @@ func end_grip() -> void:
 	gripper.queue_free()
 	gripped = false
 	
-func rotate_ray(rot : float) -> void:
-	grip_ray.rotation=rot
+func rotate_pivot(rot : float) -> void:
+	pivot.rotation=rot
 	
