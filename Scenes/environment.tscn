@@ -43,6 +43,6 @@ position = Vector2(-820.00006, 514)
 rotation = -2.2745903
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=865334308]
-position = Vector2(581, -31)
+position = Vector2(284.69928, -162.34006)
 rotation = -0.63294274
 shape = SubResource("RectangleShape2D_6b2n3")

@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	
 	if not gripped: apply_central_force(mouse_delta)
 	mouse_delta = Vector2.ZERO
-	
+
 func find_surface() -> Vector2:
 	return gripper.get_collision_point()
 		
