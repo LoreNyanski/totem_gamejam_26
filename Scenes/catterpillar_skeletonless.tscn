@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://8d3ym0yo0a12" path="res://Scenes/catterpillar_segment.tscn" id="1_5fwk0"]
 [ext_resource type="Script" uid="uid://csxcm27v4whsb" path="res://Scripts/catterpillar_skeletonless.gd" id="1_y5300"]
+[ext_resource type="Texture2D" uid="uid://c6edql3i28m8v" path="res://Assests/CaterPillerB.png" id="3_4bqji"]
 [ext_resource type="Script" uid="uid://c5cdejattkde" path="res://Scripts/cursor.gd" id="3_axev3"]
 [ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="4_isc0u"]
 
@@ -66,6 +67,22 @@ visible = false
 position = Vector2(21, 0)
 sprite_frames = SubResource("SpriteFrames_isc0u")
 
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." unique_id=1476572035]
+position = Vector2(-32, 0)
+rotation = -1.5707964
+node_a = NodePath("../Ass")
+node_b = NodePath("../Hind")
+disable_collision = false
+length = 10.0
+rest_length = 1.0
+stiffness = 60.0
+
+[node name="Hind" parent="." unique_id=48501730 instance=ExtResource("1_5fwk0")]
+position = Vector2(-21, 0)
+collision_layer = 4
+collision_mask = 63
+grip_action = "Grip2"
+
 [node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="." unique_id=1559173731]
 position = Vector2(-11, 0)
 rotation = -1.5707964
@@ -106,7 +123,25 @@ stiffness = 60.0
 
 [node name="Front" parent="." unique_id=162417768 instance=ExtResource("1_5fwk0")]
 position = Vector2(21, 0)
-grip_action = "Grip3"
+collision_layer = 16
+collision_mask = 63
+grip_action = "Grip4"
+
+[node name="DampedSpringJoint2D4" type="DampedSpringJoint2D" parent="." unique_id=153284473]
+position = Vector2(31, 0)
+rotation = -1.5707964
+node_a = NodePath("../Front")
+node_b = NodePath("../Head")
+disable_collision = false
+length = 10.0
+rest_length = 1.0
+stiffness = 60.0
+
+[node name="Head" parent="." unique_id=889264307 instance=ExtResource("1_5fwk0")]
+position = Vector2(42, 0)
+collision_layer = 32
+collision_mask = 63
+grip_action = "Grip5"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Head" unique_id=1078460514]
 visible = false
