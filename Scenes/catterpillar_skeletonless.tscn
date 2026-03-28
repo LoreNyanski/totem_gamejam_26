@@ -2,34 +2,50 @@
 
 [ext_resource type="PackedScene" uid="uid://8d3ym0yo0a12" path="res://Scenes/catterpillar_segment.tscn" id="1_5fwk0"]
 [ext_resource type="Script" uid="uid://csxcm27v4whsb" path="res://Scripts/catterpillar_skeletonless.gd" id="1_y5300"]
-[ext_resource type="Script" path="res://Scripts/cursor.gd" id="3_axev3"]
+[ext_resource type="Script" uid="uid://c5cdejattkde" path="res://Scripts/cursor.gd" id="3_axev3"]
 [ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="4_isc0u"]
 
 [node name="Catterpillar" type="Node2D" unique_id=38123875 node_paths=PackedStringArray("segments")]
 script = ExtResource("1_y5300")
-segments = [NodePath("Ass"), NodePath("Middle"), NodePath("Head")]
+segments = [NodePath("Ass"), NodePath("Hind"), NodePath("Middle"), NodePath("Front"), NodePath("Head")]
 
 [node name="Ass" parent="." unique_id=142510618 instance=ExtResource("1_5fwk0")]
-position = Vector2(-21, 0)
+position = Vector2(-42, 0)
+collision_layer = 2
+collision_mask = 63
 mass = 0.5
 grip_action = "Grip1"
 
-[node name="Catterpillar_segment#Camera2D" type="Camera2D" parent="." unique_id=1165740212]
-
-[node name="Catterpillar_segment#Icon" type="Sprite2D" parent="." unique_id=945877991]
-scale = Vector2(0.1796875, 0.171875)
-
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." unique_id=1476572035]
-position = Vector2(-11, 0)
+position = Vector2(-32, 0)
 rotation = -1.5707964
 node_a = NodePath("../Ass")
+node_b = NodePath("../Hind")
+disable_collision = false
+length = 10.0
+rest_length = 1.0
+stiffness = 60.0
+
+[node name="Hind" parent="." unique_id=48501730 instance=ExtResource("1_5fwk0")]
+position = Vector2(-21, 0)
+collision_layer = 4
+collision_mask = 63
+grip_action = "Grip2"
+
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="." unique_id=1559173731]
+position = Vector2(-11, 0)
+rotation = -1.5707964
+node_a = NodePath("../Hind")
 node_b = NodePath("../Middle")
 disable_collision = false
 length = 10.0
 rest_length = 1.0
+stiffness = 60.0
 
-[node name="Middle" parent="." unique_id=48501730 instance=ExtResource("1_5fwk0")]
-grip_action = "Grip2"
+[node name="Middle" parent="." unique_id=650862274 instance=ExtResource("1_5fwk0")]
+collision_layer = 8
+collision_mask = 63
+grip_action = "Grip3"
 
 [node name="Cursor" type="Node2D" parent="Middle" unique_id=1748558029]
 script = ExtResource("3_axev3")
@@ -40,15 +56,34 @@ position = Vector2(-2.3841858e-07, -5.9604645e-08)
 scale = Vector2(0.06250001, 0.062499993)
 texture = ExtResource("4_isc0u")
 
-[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="." unique_id=1559173731]
+[node name="DampedSpringJoint2D3" type="DampedSpringJoint2D" parent="." unique_id=277015980]
 position = Vector2(10, 0)
 rotation = -1.5707964
 node_a = NodePath("../Middle")
+node_b = NodePath("../Front")
+disable_collision = false
+length = 10.0
+rest_length = 1.0
+stiffness = 60.0
+
+[node name="Front" parent="." unique_id=162417768 instance=ExtResource("1_5fwk0")]
+position = Vector2(21, 0)
+collision_layer = 16
+collision_mask = 63
+grip_action = "Grip4"
+
+[node name="DampedSpringJoint2D4" type="DampedSpringJoint2D" parent="." unique_id=153284473]
+position = Vector2(31, 0)
+rotation = -1.5707964
+node_a = NodePath("../Front")
 node_b = NodePath("../Head")
 disable_collision = false
 length = 10.0
 rest_length = 1.0
+stiffness = 60.0
 
-[node name="Head" parent="." unique_id=650862274 instance=ExtResource("1_5fwk0")]
-position = Vector2(21, 0)
-grip_action = "Grip3"
+[node name="Head" parent="." unique_id=889264307 instance=ExtResource("1_5fwk0")]
+position = Vector2(42, 0)
+collision_layer = 32
+collision_mask = 63
+grip_action = "Grip5"
