@@ -4,7 +4,6 @@ class_name Segment
 @export_enum("Grip1","Grip2","Grip3","Grip4","Grip5")
 var grip_action: String
 @onready var pivot: Node2D = $Pivot
-@onready var limiters: StaticBody2D = $Pivot/Limiters
 @onready var grip_ray: RayCast2D = $Pivot/Grip_ray
 var gripper: PinJoint2D
 var gripped: bool = false

@@ -39,7 +39,6 @@ func _physics_process(delta: float) -> void:
 	var str = grip_str()
 	for i in segments.size():
 		var force = (cursor.global_position - segments[i].global_position).normalized() * grip_dist[i] * str * 500
-		print(force)
 		segments[i].apply_central_force(force)
 
 func grip_str() -> int:
