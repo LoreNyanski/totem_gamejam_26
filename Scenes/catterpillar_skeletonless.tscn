@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bh2on4ibicgjb"]
 
 [ext_resource type="PackedScene" uid="uid://8d3ym0yo0a12" path="res://Scenes/catterpillar_segment.tscn" id="1_5fwk0"]
-[ext_resource type="Script" uid="uid://csxcm27v4whsb" path="res://Scenes/catterpillar_skeletonless.gd" id="1_y5300"]
+[ext_resource type="Script" uid="uid://csxcm27v4whsb" path="res://Scripts/catterpillar_skeletonless.gd" id="1_y5300"]
 [ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="3_axev3"]
 
 [node name="Catterpillar" type="Node2D" unique_id=38123875 node_paths=PackedStringArray("segments")]

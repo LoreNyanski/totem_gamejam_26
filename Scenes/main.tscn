@@ -6,6 +6,6 @@
 [node name="Main" type="Node" unique_id=33247047]
 
 [node name="Catterpillar" parent="." unique_id=38123875 instance=ExtResource("1_bo1nx")]
-position = Vector2(44, 501)
+position = Vector2(54, 511)
 
 [node name="Environment" parent="." unique_id=1397730141 instance=ExtResource("2_8gbba")]
