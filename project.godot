@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Caterpillar"
-run/main_scene="uid://dp76ju14yojwu"
+run/main_scene="uid://bb6ljs2ejpfsm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://cihhjew0sqpka"
 config/icon="res://icon.svg"
