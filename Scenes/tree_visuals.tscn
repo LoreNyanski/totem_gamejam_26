@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://bf2gnjahi7btk"]
 
-[ext_resource type="Texture2D" uid="uid://bgoyg7q4frchh" path="res://Assests/Tree_bark_repeating.png" id="1_g0x78"]
 [ext_resource type="Script" uid="uid://enkv75o1a66m" path="res://Scripts/tree_visuals.gd" id="2_saqsq"]
 
-[node name="TreeVisuals" type="Polygon2D" unique_id=1820067264]
+[node name="Visuals" type="Polygon2D" unique_id=1820067264]
 texture_repeat = 2
-texture = ExtResource("1_g0x78")
 script = ExtResource("2_saqsq")
 animation_speed = 5.0
 

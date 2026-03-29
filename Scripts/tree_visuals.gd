@@ -41,7 +41,7 @@ func _process(delta):
 
 func update_texture():
 	var tween = create_tween()
-	tween.tween_property(self, "texture_offset", texture_offset + texture_offset_change, 0.1)
+	tween.tween_property(self, "texture_offset", texture_offset + texture_offset_change, 0.9)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_QUAD)
 	texture_offset += texture_offset_change

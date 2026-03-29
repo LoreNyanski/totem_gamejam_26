@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dtg11cld3kvh"]
 
 [ext_resource type="Script" uid="uid://pjrs5jstb3cu" path="res://Scripts/segment_player_type.gd" id="1_a2a7h"]
+[ext_resource type="PackedScene" uid="uid://bf2gnjahi7btk" path="res://Scenes/tree_visuals.tscn" id="2_ojk0b"]
+[ext_resource type="Texture2D" uid="uid://dvruj5ccm6dj" path="res://Assests/c_body_repeating.png" id="3_lwdqa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6nglp"]
 
@@ -38,3 +40,10 @@ target_position = Vector2(-15, 0)
 
 [node name="Grip_ray" type="RayCast2D" parent="Pivot" unique_id=1540575679]
 target_position = Vector2(0, 15)
+
+[node name="Visuals" parent="." unique_id=1820067264 instance=ExtResource("2_ojk0b")]
+texture = ExtResource("3_lwdqa")
+texture_scale = Vector2(3, 3)
+polygon = PackedVector2Array(0, -10, 5, -9, 9, -5, 10, 0, 9, 5, 5, 9, 0, 10, -5, 9, -9, 5, -10, 0, -9, -5, -5, -9)
+base_width = 3.0
+outer_extra = 1.0
