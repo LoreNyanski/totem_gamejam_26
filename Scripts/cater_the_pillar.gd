@@ -4,11 +4,12 @@ extends Node2D
 @onready var cursor: Node2D = $CharacterBody2D3/Cursor
 @onready var level_end_goal: Area2D = $"../LevelEndGoal"
 
-
+@export var jump_strength: int = 12
 @export var K = 50
 @export var D : int
 var saved_velocity = Vector2(0,0)
 var death_y = 100
+var was_gripped = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	for node in segments:
 		node.velocity *= 0.9;
 		if not some_grip():
-			#print(saved_velocity)
+			print(saved_velocity)
 			saved_velocity *= 1 - (0.15 * delta)
 		#compute work for i forgor
 		
@@ -99,12 +100,15 @@ func _physics_process(delta: float) -> void:
 	var grip_dist = dist_to_grip()
 	@warning_ignore("shadowed_global_identifier")
 	if some_grip():
-		saved_velocity = Vector2(0,0)
 		for i in segments.size():
 			var force = (cursor.global_position - segments[i].global_position).normalized() * grip_dist[i] * 500
 			segments[i].velocity+=force*delta
-			if saved_velocity.length() < force.length(): saved_velocity = force
-			
+
+func set_saved_velocity():
+	saved_velocity = Vector2.ZERO
+	for segment in segments:
+		var dist = segment.travelled_dist() * jump_strength
+		if dist.length() > saved_velocity.length(): saved_velocity = dist 
 
 func some_grip() -> bool:
 	for segment in segments:

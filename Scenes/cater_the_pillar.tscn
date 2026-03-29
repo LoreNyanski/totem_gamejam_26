@@ -50,3 +50,9 @@ texture = ExtResource("5_rrfg7")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1410373683 node_paths=PackedStringArray("followed_node")]
 script = ExtResource("6_rrfg7")
 followed_node = NodePath("../CharacterBody2D3")
+
+[connection signal="released_grip" from="CharacterBody2D" to="." method="set_saved_velocity"]
+[connection signal="released_grip" from="CharacterBody2D2" to="." method="set_saved_velocity"]
+[connection signal="released_grip" from="CharacterBody2D3" to="." method="set_saved_velocity"]
+[connection signal="released_grip" from="CharacterBody2D4" to="." method="set_saved_velocity"]
+[connection signal="released_grip" from="CharacterBody2D5" to="." method="set_saved_velocity"]

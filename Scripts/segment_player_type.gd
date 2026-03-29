@@ -8,6 +8,13 @@ var grip_action: String
 var slide = 10
 var gripper: PinJoint2D
 var gripped: bool = false
+var movement_buffer: Array = []
+
+signal released_grip
+
+func _ready() -> void:
+	movement_buffer.resize(60)
+	for i in range(60): movement_buffer[i] = global_position
 
 func _physics_process(delta: float) -> void:
 	
@@ -46,7 +53,10 @@ func _physics_process(delta: float) -> void:
 		velocity += Vector2(randf_range(-10000, 10000), randf_range(-10000, 10000))
 		
 	if not gripped:
-		move_and_slide()		
+		move_and_slide()
+		
+	movement_buffer.pop_front()
+	movement_buffer.append(global_position)
 			
 func start_grip(surface: Object) -> void:
 	#gripper = PinJoint2D.new()
@@ -59,7 +69,14 @@ func end_grip() -> void:
 	#if gripper == null: return
 	#gripper.queue_free()
 	gripped = false
+	released_grip.emit()
 	
 func rotate_pivot(rot : float) -> void:
 	pivot.rotation=rot
 	
+func travelled_dist():
+	var movement = Vector2.ZERO
+	for i in range(movement_buffer.size() - 1):
+		movement += (movement_buffer[i+1] - movement_buffer[i])
+	return movement
+		
