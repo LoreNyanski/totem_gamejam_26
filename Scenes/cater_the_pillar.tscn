@@ -11,6 +11,7 @@
 [node name="CaterThePillar" type="Node2D" unique_id=1528928944 node_paths=PackedStringArray("segments")]
 script = ExtResource("1_65wgl")
 segments = [NodePath("CharacterBody2D"), NodePath("CharacterBody2D2"), NodePath("CharacterBody2D3"), NodePath("CharacterBody2D4"), NodePath("CharacterBody2D5")]
+jump_strength = 14
 D = 20
 
 [node name="CharacterBody2D" parent="." unique_id=251455790 instance=ExtResource("1_n2qwj")]

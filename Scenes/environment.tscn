@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5hkj05beon4"]
 
-[ext_resource type="Script" path="res://Scripts/ungrippable.gd" id="3_a65fu"]
+[ext_resource type="Script" uid="uid://38ufnkeobyf2" path="res://Scripts/ungrippable.gd" id="3_a65fu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c24xt"]
 size = Vector2(1267.5, 169)
