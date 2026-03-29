@@ -2,9 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bf2gnjahi7btk" path="res://Scenes/tree_visuals.tscn" id="1_km3fo"]
 [ext_resource type="Texture2D" uid="uid://bgoyg7q4frchh" path="res://Assests/Tree_bark_repeating.png" id="2_mfu5p"]
+[ext_resource type="Script" uid="uid://38ufnkeobyf2" path="res://Scripts/ungrippable.gd" id="3_a65fu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b2n3"]
 size = Vector2(1742, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukl56"]
+size = Vector2(427, 46)
 
 [node name="Environment" type="Node2D" unique_id=1397730141]
 
@@ -52,3 +56,11 @@ shape = SubResource("RectangleShape2D_6b2n3")
 [node name="TreeVisuals" parent="." unique_id=1820067264 instance=ExtResource("1_km3fo")]
 texture = ExtResource("2_mfu5p")
 polygon = PackedVector2Array(399, 670, 374, 569, 571, 567, 774, 572, 852, 566, 919, 517, 991, 470, 1039, 422, 1139, 364, 1229, 284, 1315, 234, 1372, 180, 1421, 158, 1441, 123, 1454, 187, 1418, 224, 1301, 292, 1172, 400, 1066, 475, 974, 549, 1080, 568, 1192, 534, 1144, 581, 1014, 655, 842, 624, 673, 641, 548, 627)
+
+[node name="Ungrippable" type="StaticBody2D" parent="." unique_id=1094192559]
+script = ExtResource("3_a65fu")
+metadata/_custom_type_script = "uid://38ufnkeobyf2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ungrippable" unique_id=519212259]
+position = Vector2(654, 475)
+shape = SubResource("RectangleShape2D_ukl56")

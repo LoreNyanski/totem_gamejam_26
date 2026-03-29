@@ -36,7 +36,8 @@ func _physics_process(delta: float) -> void:
 		for ray in grip_rays:
 			var surface = ray.get_collider()
 			if surface != null: 
-				if surface is not Char2DSeg: 
+				if surface is not Char2DSeg:
+					if surface is Ungrippable: continue
 					start_grip(surface)
 					continue
 					
