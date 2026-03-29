@@ -8,39 +8,42 @@ var grip_action: String
 var slide = 10
 var gripper: PinJoint2D
 var gripped: bool = false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	#pass
+var savedVelocity = Vector2(0,0)
 
 func _physics_process(delta: float) -> void:
 	
-	#print(velocity)
+#	if grip_action=="Grip1":
+		#print(velocity)
 	
 		
 	if not is_on_floor():	
-		velocity += get_gravity() * delta
-#		print("grav")
+		velocity += (get_gravity()/2) * delta
+		velocity += savedVelocity*delta
+		#print(velocity)
 		
 	#SLIDE IF NOT GRIPPING change req
 	if is_on_floor():
 		var normal = get_floor_normal()
-		var slide_dir = Vector2(normal.y, -normal.x).normalized()
-	
-		if slide_dir.dot(Vector2.DOWN) < 0:
-			slide_dir = -slide_dir
-		#velocity +=slide_dir*slide*delta
-	if not gripped:
-		move_and_slide()	
+		var floor_vector = Vector2(normal.y, -normal.x).normalized()
+		#print(rad_to_deg(normal.angle_to(Vector2.UP)))
+		
+		if abs(rad_to_deg(normal.angle_to(Vector2.UP)))>=30:
+			var des = sign(rad_to_deg(normal.angle_to(Vector2.UP)))
+			velocity +=floor_vector*slide*des
+		
+		
+
 	if Input.is_action_pressed(grip_action) and not gripped:
 		for ray in grip_rays:
 			var surface = ray.get_collider()
 			if surface != null: 
-				if surface is not Char2DSeg: start_grip(surface)
+				if surface is not Char2DSeg: 
+					start_grip(surface)
+					continue
 	if Input.is_action_just_released(grip_action):
 		end_grip()
-		
+	if not gripped:
+		move_and_slide()			
 func start_grip(surface: Object) -> void:
 	#gripper = PinJoint2D.new()
 	#gripper.node_a = self.get_path()
@@ -51,6 +54,8 @@ func start_grip(surface: Object) -> void:
 func end_grip() -> void:
 	#if gripper == null: return
 	#gripper.queue_free()
+	print(velocity)
+	savedVelocity = velocity
 	gripped = false
 	
 func rotate_pivot(rot : float) -> void:

@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://c5n01lrgw5hb0"]
+[gd_scene format=3 uid="uid://ddl7r38ecgb84"]
 
 [ext_resource type="Script" uid="uid://dpjtr0u8i3lfs" path="res://Scripts/cater_the_pillar.gd" id="1_65wgl"]
 [ext_resource type="PackedScene" uid="uid://dtg11cld3kvh" path="res://Scenes/segmentPlayerType.tscn" id="1_n2qwj"]
 [ext_resource type="Texture2D" uid="uid://dllo4b04mdrtm" path="res://Assests/bscsprit.png" id="3_8fp46"]
 [ext_resource type="Script" uid="uid://c5cdejattkde" path="res://Scripts/cursor.gd" id="3_seccu"]
 [ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="4_8fp46"]
+[ext_resource type="Script" uid="uid://cytxqu03wpx1s" path="res://Scripts/camera.gd" id="6_rrfg7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rrfg7"]
 atlas = ExtResource("3_8fp46")
@@ -104,3 +105,7 @@ grip_action = "Grip5"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D5" unique_id=1645669859]
 visible = false
 sprite_frames = SubResource("SpriteFrames_e4g3q")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1410373683 node_paths=PackedStringArray("followed_node")]
+script = ExtResource("6_rrfg7")
+followed_node = NodePath("../CharacterBody2D3")
