@@ -1,14 +1,47 @@
 extends Node2D
+@export var segments: Array[Char2DSeg]
+#@onready var cursor: Node2D = $Middle/Cursor
+@onready var cursor: Node2D = $CharacterBody2D3/Cursor
+@export var K = 50
+@export var D : int
 
-@export var segments: Array[Segment]
-@onready var cursor: Node2D = $Middle/Cursor
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	#Get vector between center of vectors
-	#If edge segment -> normalize
-	#Else average vectors and then normalize
-	#rotate based on the normal
+	for n in segments.size()-1:
+		
+		#compute work for streching
+		var m =(segments[n].global_position+segments[n+1].global_position)/2
+	#	print(m)
+		var deltaA = m- segments[n].global_position
+	#	print(deltaA)
+		var x = deltaA.length() - D / 2
+		var I = delta * x**3 * K*deltaA.normalized()
+		#Dampen F 
+		
+		segments[n].velocity += I
+		segments[n+1].velocity -= I
+		
+		
+		#compute work for i forgor
+		
+		
+	#for n in segments.size()-2:
+	#
+		#var m =(segments[n].global_position+segments[n+2].global_position)/2
+		#var deltaB = segments[n+1].global_position-m
+		#segments[n].velocity+=delta*C*deltaB
+		#segments[n+2].velocity+=delta*C*deltaB
+
+	#	
+	for node in segments:
+		node.velocity *= 0.9;
+		
 	var dist : Array[Vector2]
 	var distant : Array[Vector2]
 	for seg in segments:
@@ -31,8 +64,8 @@ func _physics_process(delta: float) -> void:
 		var perpToSurf = Vector2(0,-1)
 		#print(rot)
 		#segments[seg].rotation =rot.angle_to(perpToSurf.normalized())
-		if not segments[seg].gripped:
-			segments[seg].rotate_pivot(rot.angle_to(perpToSurf.normalized()))
+		#if not segments[seg].gripped:
+			#segments[seg].rotate_pivot(rot.angle_to(perpToSurf.normalized()))
 		#print(segments[seg].rotation)
 	
 	var grip_dist = dist_to_grip()
@@ -40,7 +73,7 @@ func _physics_process(delta: float) -> void:
 	for i in segments.size():
 		var force = (cursor.global_position - segments[i].global_position).normalized() * grip_dist[i] * str * 500
 		#print(force)
-		segments[i].apply_central_force(force)
+		segments[i].velocity+=force*delta
 
 func grip_str() -> int:
 	var num_grips = 0
@@ -66,4 +99,5 @@ func dist_to_grip():
 			if counter == -1: continue
 			counter += 1
 			grip_dist_array[i] = min(grip_dist_array[i], counter)
-	return grip_dist_array
+	return grip_dist_array	
+		
