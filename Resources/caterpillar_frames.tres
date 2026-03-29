@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cmmts2irhxu4u"]
+
+[ext_resource type="Texture2D" uid="uid://dqlgxwxftwmn7" path="res://Assests/c_ass.png" id="1_6iehi"]
+[ext_resource type="Texture2D" uid="uid://bkti0wc0alb8m" path="res://Assests/c_body.png" id="1_7hyja"]
+[ext_resource type="Texture2D" uid="uid://pinnw2mh08jv" path="res://Assests/c_head.png" id="3_05j1p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf8w0"]
+atlas = ExtResource("1_6iehi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2jow"]
+atlas = ExtResource("1_7hyja")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpxtv"]
+atlas = ExtResource("3_05j1p")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf8w0")
+}],
+"loop": true,
+"name": &"Ass",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2jow")
+}],
+"loop": true,
+"name": &"Body",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpxtv")
+}],
+"loop": true,
+"name": &"Head",
+"speed": 5.0
+}]

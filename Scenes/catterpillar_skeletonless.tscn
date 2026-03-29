@@ -2,55 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://8d3ym0yo0a12" path="res://Scenes/catterpillar_segment.tscn" id="1_5fwk0"]
 [ext_resource type="Script" uid="uid://csxcm27v4whsb" path="res://Scripts/catterpillar_skeletonless.gd" id="1_y5300"]
-[ext_resource type="Texture2D" uid="uid://c6edql3i28m8v" path="res://Assests/CaterPillerB.png" id="3_4bqji"]
 [ext_resource type="Script" uid="uid://c5cdejattkde" path="res://Scripts/cursor.gd" id="3_axev3"]
+[ext_resource type="SpriteFrames" uid="uid://cmmts2irhxu4u" path="res://Resources/caterpillar_frames.tres" id="3_cr6i1"]
 [ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="4_isc0u"]
 [ext_resource type="Script" uid="uid://cytxqu03wpx1s" path="res://Scripts/camera.gd" id="6_cr6i1"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cr6i1"]
-atlas = ExtResource("3_4bqji")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_isc0u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cr6i1")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4bqji"]
-atlas = ExtResource("3_4bqji")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cr6i1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4bqji")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xr2t8"]
-atlas = ExtResource("3_4bqji")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_h22po"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xr2t8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Catterpillar" type="Node2D" unique_id=38123875 node_paths=PackedStringArray("segments")]
 script = ExtResource("1_y5300")
@@ -64,9 +19,10 @@ mass = 0.5
 grip_action = "Grip1"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ass" unique_id=1239205942]
-visible = false
-position = Vector2(21, 0)
-sprite_frames = SubResource("SpriteFrames_isc0u")
+position = Vector2(-0.25000066, -0.124999255)
+scale = Vector2(0.17578126, 0.15820313)
+sprite_frames = ExtResource("3_cr6i1")
+animation = &"Ass"
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." unique_id=1476572035]
 position = Vector2(-32, 0)
@@ -84,6 +40,12 @@ collision_layer = 4
 collision_mask = 63
 grip_action = "Grip2"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hind" unique_id=694521722]
+position = Vector2(0, 1.4901161e-08)
+scale = Vector2(0.16796875, 0.15429688)
+sprite_frames = ExtResource("3_cr6i1")
+animation = &"Body"
+
 [node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="." unique_id=1559173731]
 position = Vector2(-11, 0)
 rotation = -1.5707964
@@ -100,8 +62,10 @@ collision_mask = 63
 grip_action = "Grip3"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Middle" unique_id=2034323224]
-visible = false
-sprite_frames = SubResource("SpriteFrames_cr6i1")
+position = Vector2(0, 1.4901161e-08)
+scale = Vector2(0.16796875, 0.15429688)
+sprite_frames = ExtResource("3_cr6i1")
+animation = &"Body"
 
 [node name="Cursor" type="Node2D" parent="Middle" unique_id=1748558029]
 script = ExtResource("3_axev3")
@@ -128,6 +92,12 @@ collision_layer = 16
 collision_mask = 63
 grip_action = "Grip4"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Front" unique_id=1606425577]
+position = Vector2(0, 1.4901161e-08)
+scale = Vector2(0.16796875, 0.15429688)
+sprite_frames = ExtResource("3_cr6i1")
+animation = &"Body"
+
 [node name="DampedSpringJoint2D4" type="DampedSpringJoint2D" parent="." unique_id=153284473]
 position = Vector2(31, 0)
 rotation = -1.5707964
@@ -145,8 +115,10 @@ collision_mask = 63
 grip_action = "Grip5"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Head" unique_id=1078460514]
-visible = false
-sprite_frames = SubResource("SpriteFrames_h22po")
+position = Vector2(0.24999905, 0.49999952)
+scale = Vector2(0.16796874, 0.16406249)
+sprite_frames = ExtResource("3_cr6i1")
+animation = &"Head"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=487342008 node_paths=PackedStringArray("followed_node")]
 script = ExtResource("6_cr6i1")
