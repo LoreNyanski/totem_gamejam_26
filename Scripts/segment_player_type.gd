@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	
 		
 	if not is_on_floor():
-		velocity += (get_gravity()/2) * delta
+		velocity += (get_gravity()*0.75) * delta
 		if not get_parent().some_grip():
 			velocity += get_parent().saved_velocity * delta
 		#print(velocity)

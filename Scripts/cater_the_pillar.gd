@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 
 	if all_inside:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().change_scene_to_file("res://Scenes/mainMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/EndScreen.tscn")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
