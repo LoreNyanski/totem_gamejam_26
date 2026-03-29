@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cc8apxytr4p04"]
+
+[ext_resource type="Script" uid="uid://bjpyj7le2nk2n" path="res://Scenes/panel.gd" id="1_i8h6y"]
+[ext_resource type="Script" uid="uid://bp7333ydvy1tf" path="res://Scenes/credits.gd" id="1_xbebw"]
+
+[node name="Control" type="Control" unique_id=6523410]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbebw")
+
+[node name="Panel" type="Panel" parent="." unique_id=1767849448]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8h6y")
+
+[node name="TextEdit" type="TextEdit" parent="Panel" unique_id=486229646]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 246.0
+offset_top = -593.0
+offset_right = 871.0
+offset_bottom = -177.0
+grow_vertical = 0
+text = "A game about Caterpiller
+By Georgi, Lore and Henry from FRG
+Credits:
+To us for doing it in 34 hours
+that sounds form youtube
+"
+
+[node name="exit" type="Button" parent="Panel" unique_id=1302183405]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 507.0
+offset_right = 1061.0
+offset_bottom = 607.0
+theme_override_font_sizes/font_size = 67
+text = "Exit"
+
+[node name="again" type="Button" parent="Panel" unique_id=7906586]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 508.0
+offset_right = 563.0
+offset_bottom = 608.0
+theme_override_font_sizes/font_size = 67
+text = "Continue"
+
+[connection signal="pressed" from="Panel/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/again" to="." method="_on_again_pressed"]

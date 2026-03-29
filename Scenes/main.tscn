@@ -11,10 +11,10 @@ size = Vector2(132.5, 346)
 [node name="Main" type="Node" unique_id=33247047]
 
 [node name="Environment" parent="." unique_id=1397730141 instance=ExtResource("2_8gbba")]
-position = Vector2(-6, -738)
+position = Vector2(188, -900)
 
 [node name="LevelEndGoal" parent="." unique_id=98937548 instance=ExtResource("3_jjvhh")]
-position = Vector2(-236, -231)
+position = Vector2(1863, -5932)
 
 [node name="CaterThePillar" parent="." unique_id=1528928944 instance=ExtResource("3_8gbba")]
 position = Vector2(346, -279)
