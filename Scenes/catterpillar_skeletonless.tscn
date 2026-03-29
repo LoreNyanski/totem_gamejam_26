@@ -19,8 +19,8 @@ mass = 0.5
 grip_action = "Grip1"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ass" unique_id=1239205942]
-position = Vector2(-0.25000066, -0.124999255)
-scale = Vector2(0.17578126, 0.15820313)
+position = Vector2(-1.1920929e-07, 0)
+scale = Vector2(0.15039065, 0.1484375)
 sprite_frames = ExtResource("3_cr6i1")
 animation = &"Ass"
 
