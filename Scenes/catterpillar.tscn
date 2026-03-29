@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dnytq5m2edbmv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydnig"]
+
+[node name="Catterpillar" type="Node2D" unique_id=2118371645]
+
+[node name="PhysicsBones" type="Node2D" parent="." unique_id=799151200]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicsBones" unique_id=1239414501]
+position = Vector2(8, 0)
+shape = SubResource("CircleShape2D_ydnig")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PhysicsBones" unique_id=1205456698]
+position = Vector2(28, 0)
+shape = SubResource("CircleShape2D_ydnig")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PhysicsBones" unique_id=2045853404]
+position = Vector2(48, 0)
+shape = SubResource("CircleShape2D_ydnig")
+
+[node name="Joints" type="Node2D" parent="." unique_id=2102976040]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Joints" unique_id=1857587960]
+position = Vector2(18, 0)
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Joints" unique_id=362150593]
+position = Vector2(38, 0)
