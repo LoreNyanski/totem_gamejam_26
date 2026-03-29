@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ccw5u862u2hiu" path="res://icon.svg" id="4_8fp46"]
 [ext_resource type="Texture2D" uid="uid://2ctfj1nwt5a6" path="res://Assests/eyes.png" id="5_rrfg7"]
 [ext_resource type="Script" uid="uid://cytxqu03wpx1s" path="res://Scripts/camera.gd" id="6_rrfg7"]
+[ext_resource type="Texture2D" uid="uid://1x1tetpeffi4" path="res://Assests/sky_repeatable.png" id="8_jlkxo"]
 
 [node name="CaterThePillar" type="Node2D" unique_id=1528928944 node_paths=PackedStringArray("segments")]
 script = ExtResource("1_65wgl")
@@ -50,6 +51,13 @@ texture = ExtResource("5_rrfg7")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1410373683 node_paths=PackedStringArray("followed_node")]
 script = ExtResource("6_rrfg7")
 followed_node = NodePath("../CharacterBody2D3")
+
+[node name="Sprite2D" type="Polygon2D" parent="Camera2D" unique_id=1003655267]
+modulate = Color(1, 1, 1, 0.5372549)
+z_index = -5
+texture_repeat = 2
+texture = ExtResource("8_jlkxo")
+polygon = PackedVector2Array(-586, 329, -583, -331, 591, -331, 585, 334)
 
 [connection signal="released_grip" from="CharacterBody2D" to="." method="set_saved_velocity"]
 [connection signal="released_grip" from="CharacterBody2D2" to="." method="set_saved_velocity"]
