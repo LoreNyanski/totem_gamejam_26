@@ -43,6 +43,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released(grip_action):
 		end_grip()
 		
+	if Input.is_action_just_pressed("blows up"):
+		velocity += Vector2(randf_range(-10000, 10000), randf_range(-10000, 10000))
+		
 	if not gripped:
 		move_and_slide()		
 			
