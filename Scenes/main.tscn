@@ -9,7 +9,11 @@
 [node name="Environment" parent="." unique_id=1397730141 instance=ExtResource("2_8gbba")]
 
 [node name="CaterThePillar" parent="." unique_id=1528928944 instance=ExtResource("3_8gbba")]
-position = Vector2(486, 529)
+position = Vector2(-482, -557)
 
-[node name="Catterpillar" parent="." unique_id=38123875 instance=ExtResource("1_bo1nx")]
-position = Vector2(694, 529)
+[node name="Label" type="Label" parent="." unique_id=2013093381]
+offset_left = 1036.0
+offset_top = 18.0
+offset_right = 1108.0
+offset_bottom = 100.0
+text = "T"
