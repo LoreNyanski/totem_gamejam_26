@@ -255,17 +255,9 @@ shape = SubResource("RectangleShape2D_0lys8")
 position = Vector2(532.5, -5377)
 shape = SubResource("RectangleShape2D_ewsca")
 
-[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D" unique_id=1855222278]
-position = Vector2(2623, -7260)
-shape = SubResource("RectangleShape2D_3yocm")
-
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D" unique_id=2131995078]
 position = Vector2(1372, -3811)
 shape = SubResource("RectangleShape2D_vbjpg")
-
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D" unique_id=1374957456]
-position = Vector2(2731, -7665)
-shape = SubResource("RectangleShape2D_3yocm")
 
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D" unique_id=1460445564]
 position = Vector2(1480, -4267)
@@ -316,7 +308,11 @@ offset_left = 78.0
 offset_top = 260.0
 offset_right = 467.0
 offset_bottom = 567.0
-text = "EXPLAIN CONTROLS
+text = "Use 'A', 'S','D','F', and 'G' to grip each
+ segment of the Caterpillar
+
+
+Avoid the plastic - it does not allow you to stick 
 "
 
 [node name="Ungrippable" type="StaticBody2D" parent="." unique_id=1626571574]

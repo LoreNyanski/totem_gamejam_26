@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ddl7r38ecgb84" path="res://Scenes/cater_the_pillar.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" path="res://Scenes/LevelEndGoal.tscn" id="3_jjvhh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
+size = Vector2(132.5, 346)
+
 [node name="Main" type="Node" unique_id=33247047]
 
 [node name="Environment" parent="." unique_id=1397730141 instance=ExtResource("2_8gbba")]
@@ -13,4 +16,13 @@ position = Vector2(188, -900)
 position = Vector2(1863, -5932)
 
 [node name="CaterThePillar" parent="." unique_id=1528928944 instance=ExtResource("3_8gbba")]
-position = Vector2(394, -412)
+position = Vector2(416, -410)
+
+[node name="MusicStart" type="Area2D" parent="." unique_id=1053248271]
+
+[node name="hitbox" type="CollisionShape2D" parent="MusicStart" unique_id=42546446]
+position = Vector2(913, -632)
+shape = SubResource("RectangleShape2D_8gbba")
+debug_color = Color(0.65358657, 0.8718465, 0.99999994, 0.41960785)
+
+[connection signal="body_entered" from="MusicStart" to="MusicStart" method="_on_body_entered"]

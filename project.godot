@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://cihhjew0sqpka"
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalAudio="*uid://51ac5l4uwvfd"
+
 [display]
 
 window/size/resizable=false
