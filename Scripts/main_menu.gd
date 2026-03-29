@@ -1,6 +1,6 @@
 extends Control
-@onready var button_2: Button = $Button2
-@onready var button: Button = $Button
+@onready var button_2: Button = $CenterContainer/VBoxContainer/Button2
+@onready var button: Button = $CenterContainer/VBoxContainer/Button
 
 
 # Called when the node enters the scene tree for the first time.
