@@ -6,7 +6,6 @@ extends Polygon2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var points = polygon
-	points.append(polygon[0])
 	line_2d.points = points
 	line_2d_2.points = points
 	
