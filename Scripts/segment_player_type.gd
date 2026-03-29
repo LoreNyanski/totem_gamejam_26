@@ -8,7 +8,6 @@ var grip_action: String
 var slide = 10
 var gripper: PinJoint2D
 var gripped: bool = false
-var savedVelocity = Vector2(0,0)
 
 func _physics_process(delta: float) -> void:
 	
@@ -16,9 +15,10 @@ func _physics_process(delta: float) -> void:
 		#print(velocity)
 	
 		
-	if not is_on_floor():	
+	if not is_on_floor():
 		velocity += (get_gravity()/2) * delta
-		velocity += savedVelocity*delta
+		if not get_parent().some_grip():
+			velocity += get_parent().saved_velocity * delta
 		#print(velocity)
 		
 	#SLIDE IF NOT GRIPPING change req
@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 			var des = sign(rad_to_deg(normal.angle_to(Vector2.UP)))
 			velocity +=floor_vector*slide*des
 		
-		
 
 	if Input.is_action_pressed(grip_action) and not gripped:
 		for ray in grip_rays:
@@ -40,10 +39,13 @@ func _physics_process(delta: float) -> void:
 				if surface is not Char2DSeg: 
 					start_grip(surface)
 					continue
+					
 	if Input.is_action_just_released(grip_action):
 		end_grip()
+		
 	if not gripped:
-		move_and_slide()			
+		move_and_slide()		
+			
 func start_grip(surface: Object) -> void:
 	#gripper = PinJoint2D.new()
 	#gripper.node_a = self.get_path()
@@ -54,8 +56,6 @@ func start_grip(surface: Object) -> void:
 func end_grip() -> void:
 	#if gripper == null: return
 	#gripper.queue_free()
-	print(velocity)
-	savedVelocity = velocity
 	gripped = false
 	
 func rotate_pivot(rot : float) -> void:

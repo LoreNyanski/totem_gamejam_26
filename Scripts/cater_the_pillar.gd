@@ -2,10 +2,11 @@ extends Node2D
 @export var segments: Array[Char2DSeg]
 #@onready var cursor: Node2D = $Middle/Cursor
 @onready var cursor: Node2D = $CharacterBody2D3/Cursor
-@onready var label: Label = $"../Label"
 
 @export var K = 50
 @export var D : int
+
+var saved_velocity: Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,11 +27,14 @@ func _physics_process(delta: float) -> void:
 		var x = deltaA.length() - D / 2
 		var I = delta * x**3 * K*deltaA.normalized()
 		#Dampen F 
-		label.text = str(I)
 		segments[n].velocity += I
 		segments[n+1].velocity -= I
-		
-		
+
+	for node in segments:
+		node.velocity *= 0.9;
+		if not some_grip():
+			print(saved_velocity)
+			saved_velocity *= 1 - (0.15 * delta)
 		#compute work for i forgor
 		
 		
@@ -42,8 +46,7 @@ func _physics_process(delta: float) -> void:
 		#segments[n+2].velocity+=delta*C*deltaB
 
 	#	
-	for node in segments:
-		node.velocity *= 0.9;
+
 		#
 	#var dist : Array[Vector2]
 	#var distant : Array[Vector2]
@@ -73,20 +76,18 @@ func _physics_process(delta: float) -> void:
 	
 	var grip_dist = dist_to_grip()
 	@warning_ignore("shadowed_global_identifier")
-	var str = grip_str()
-	for i in segments.size():
-		var force = (cursor.global_position - segments[i].global_position).normalized() * grip_dist[i] * str * 500
-		#if i==0:
-			#print(force)
-		segments[i].velocity+=force*delta
-		
-		#label.text=str(segments[0].velocity)
+	if some_grip():
+		saved_velocity = Vector2.ZERO
+		for i in segments.size():
+			var force = (cursor.global_position - segments[i].global_position).normalized() * grip_dist[i] * 500
+			segments[i].velocity+=force*delta
+			if saved_velocity.length() < force.length(): saved_velocity = force
+			
 
-func grip_str() -> int:
-	var num_grips = 0
+func some_grip() -> bool:
 	for segment in segments:
-		if segment.gripped: num_grips += 1
-	return num_grips
+		if segment.gripped: return true
+	return false
 	
 func dist_to_grip():
 	var grip_dist_array = []
@@ -107,4 +108,3 @@ func dist_to_grip():
 			counter += 1
 			grip_dist_array[i] = min(grip_dist_array[i], counter)
 	return grip_dist_array	
-		
