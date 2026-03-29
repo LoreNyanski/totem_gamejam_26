@@ -3,11 +3,12 @@ extends Node2D
 #@onready var cursor: Node2D = $Middle/Cursor
 @onready var cursor: Node2D = $CharacterBody2D3/Cursor
 @onready var level_end_goal: Area2D = $"../LevelEndGoal"
-@onready var dead_zone: StaticBody2D = $"../DeadZone"
+
 
 @export var K = 50
 @export var D : int
-var death_y = 2500
+var saved_velocity = Vector2(0,0)
+var death_y = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,13 +18,16 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	#If completed ->get_tree().change_scene_to_file("res://Scenes/mainMenu.tscn")
-	var all_inside = true
-
+	
 	for seg in segments:
 		if seg.global_position.y > death_y:
 			#play death sounds
 			get_tree().change_scene_to_file("res://Scenes/main.tscn")
-			pass
+			
+			
+	var all_inside = true
+	for seg in segments:
+
 		if not level_end_goal.overlaps_body(seg):
 			all_inside = false
 			break
@@ -51,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	for node in segments:
 		node.velocity *= 0.9;
 		if not some_grip():
-			print(saved_velocity)
+			#print(saved_velocity)
 			saved_velocity *= 1 - (0.15 * delta)
 		#compute work for i forgor
 		
@@ -95,7 +99,7 @@ func _physics_process(delta: float) -> void:
 	var grip_dist = dist_to_grip()
 	@warning_ignore("shadowed_global_identifier")
 	if some_grip():
-		saved_velocity = Vector2.ZERO
+		saved_velocity = Vector2(0,0)
 		for i in segments.size():
 			var force = (cursor.global_position - segments[i].global_position).normalized() * grip_dist[i] * 500
 			segments[i].velocity+=force*delta
