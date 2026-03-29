@@ -6,7 +6,6 @@
 [node name="TreeVisuals" type="Polygon2D" unique_id=1820067264]
 texture_repeat = 2
 texture = ExtResource("1_g0x78")
-polygon = PackedVector2Array(108, 110, 727, 96, 955, 332, 431, 540, 330, 184)
 script = ExtResource("2_saqsq")
 animation_speed = 5.0
 

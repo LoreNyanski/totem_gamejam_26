@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dp76ju14yojwu"]
 
-[ext_resource type="PackedScene" uid="uid://bh2on4ibicgjb" path="res://Scenes/catterpillar_skeletonless.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://b5hkj05beon4" path="res://Scenes/environment.tscn" id="2_8gbba"]
-[ext_resource type="PackedScene" path="res://Scenes/cater_the_pillar.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://ddl7r38ecgb84" path="res://Scenes/cater_the_pillar.tscn" id="3_8gbba"]
 
 [node name="Main" type="Node" unique_id=33247047]
 
@@ -10,10 +9,3 @@
 
 [node name="CaterThePillar" parent="." unique_id=1528928944 instance=ExtResource("3_8gbba")]
 position = Vector2(-482, -557)
-
-[node name="Label" type="Label" parent="." unique_id=2013093381]
-offset_left = 1036.0
-offset_top = 18.0
-offset_right = 1108.0
-offset_bottom = 100.0
-text = "T"
