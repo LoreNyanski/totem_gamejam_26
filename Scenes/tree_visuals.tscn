@@ -7,10 +7,14 @@ texture_repeat = 2
 script = ExtResource("2_saqsq")
 animation_speed = 5.0
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=687179604]
-
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=45693750]
-
 [node name="Timer" type="Timer" parent="." unique_id=1964618240]
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1364238398]
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="." unique_id=1302325203]
+closed = true
+width = 4.0
 
 [connection signal="timeout" from="Timer" to="." method="update_texture"]

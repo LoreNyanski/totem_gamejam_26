@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://b5hkj05beon4"]
 
+[ext_resource type="PackedScene" uid="uid://bf2gnjahi7btk" path="res://Scenes/tree_visuals.tscn" id="2_ukl56"]
 [ext_resource type="Script" uid="uid://38ufnkeobyf2" path="res://Scripts/ungrippable.gd" id="3_a65fu"]
+[ext_resource type="Texture2D" uid="uid://cbmpnna5ulo6j" path="res://Assests/Tree_inner_bark_repeating.png" id="3_osnen"]
+[ext_resource type="Texture2D" uid="uid://bgoyg7q4frchh" path="res://Assests/Tree_bark_repeating.png" id="3_vpl2n"]
+[ext_resource type="Texture2D" uid="uid://d0dmmnnj1vkg7" path="res://Assests/moist_repeating.png" id="4_osnen"]
+[ext_resource type="Texture2D" uid="uid://l4qqdmbxqgm6" path="res://Assests/rock_repeating.png" id="6_djr8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c24xt"]
 size = Vector2(1267.5, 169)
@@ -443,3 +448,234 @@ debug_color = Color(0.9482073, 4.042983e-06, 0.5817702, 0.41960785)
 position = Vector2(-64, 353.5)
 shape = SubResource("RectangleShape2D_kddb2")
 debug_color = Color(0.9482073, 4.042983e-06, 0.5817702, 0.41960785)
+
+[node name="tre" parent="." unique_id=1820067264 instance=ExtResource("2_ukl56")]
+visible = false
+texture = ExtResource("3_osnen")
+polygon = PackedVector2Array(3089, 79, 3089, -1536, 3897, -2001, 4270, -2710, 4282, -2832, 3921, -2906, 3884, -2484, 3089, -1756, 2869, -1628, 2710, -1475, 2722, 73)
+
+[node name="Visuals29" parent="." unique_id=465487466 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1123, 725, 1283, 707, 1283, 738, 1123, 739)
+
+[node name="Visuals30" parent="." unique_id=1323866508 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1459, 720, 1616, 722, 1615, 733, 1454, 733)
+
+[node name="Visuals31" parent="." unique_id=1815771078 instance=ExtResource("2_ukl56")]
+
+[node name="Visuals32" parent="." unique_id=1326909472 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(3122, -252, 3101, -252, 3096, -97, 3123, -99)
+
+[node name="Visuals33" parent="." unique_id=968359412 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(2798, -226, 2767, -223, 2767, -388, 2802, -381)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1883705896]
+
+[node name="Visuals" parent="Node2D" unique_id=1693805858 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(2649, -576, 2794, -574, 2792, -552, 2653, -554)
+
+[node name="Visuals2" parent="Node2D" unique_id=1675504851 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(3125, -658, 2911, -652, 2913, -679, 2974, -676, 2974, -820, 3124, -816)
+
+[node name="Visuals3" parent="Node2D" unique_id=1022542555 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(2800, -844, 2801, -820, 2645, -821, 2647, -846)
+
+[node name="Visuals4" parent="Node2D" unique_id=190452325 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(4688, -1134, 4689, -1291, 4632, -1289, 4658, -1235, 4537, -1213, 4538, -1133)
+
+[node name="Visuals5" parent="Node2D" unique_id=693147467 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(3893, -2038, 3905, -2012, 3774, -1944, 3765, -1968)
+
+[node name="Visuals6" parent="Node2D" unique_id=470322349 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(3882, -2461, 3929, -2461, 3935, -2827, 3779, -2831, 3779, -2467)
+
+[node name="Visuals7" parent="Node2D" unique_id=19079053 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1891, -2370, 1915, -2370, 1912, -2052, 1889, -2053)
+
+[node name="Visuals8" parent="Node2D" unique_id=1798244701 instance=ExtResource("2_ukl56")]
+position = Vector2(-277, -270)
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1891, -2370, 1915, -2370, 1912, -2052, 1889, -2053)
+
+[node name="Visuals9" parent="Node2D" unique_id=610611666 instance=ExtResource("2_ukl56")]
+position = Vector2(-543, -550)
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1891, -2370, 1915, -2370, 1912, -2052, 1889, -2053)
+
+[node name="Visuals10" parent="Node2D" unique_id=2027134065 instance=ExtResource("2_ukl56")]
+position = Vector2(-409, -914)
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1896, -2370, 1915, -2370, 1912, -2052, 1893, -2052)
+
+[node name="Visuals11" parent="Node2D" unique_id=1364804666 instance=ExtResource("2_ukl56")]
+position = Vector2(-300, -1375)
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1896, -2370, 1915, -2370, 1912, -2052, 1893, -2052)
+
+[node name="Visuals12" parent="Node2D" unique_id=1685856621 instance=ExtResource("2_ukl56")]
+position = Vector2(672, -711)
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1896, -2370, 1915, -2370, 1915, -2098, 1891, -2100)
+
+[node name="Visuals13" parent="Node2D" unique_id=918730680 instance=ExtResource("2_ukl56")]
+position = Vector2(130, -1610)
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1834, -2244, 1913, -2243, 1915, -2098, 1833, -2095)
+
+[node name="Visuals14" parent="Node2D" unique_id=363304625 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(2852, -4757, 3372, -4763, 3371, -4803, 2851, -4805)
+
+[node name="Visuals15" parent="Node2D" unique_id=213178426 instance=ExtResource("2_ukl56")]
+position = Vector2(-2853, 3)
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(2852, -4757, 3372, -4763, 3371, -4803, 2851, -4805)
+
+[node name="Visuals16" parent="Node2D" unique_id=171349199 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(1689, -1310, 1652, -1337, 2142, -2077, 2195, -2042)
+
+[node name="Visuals17" parent="Node2D" unique_id=651427837 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(2803, -1259, 2803, -1239, 2654, -1237, 2653, -1257)
+
+[node name="Visuals18" parent="Node2D" unique_id=2043642094 instance=ExtResource("2_ukl56")]
+position = Vector2(268, 85)
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(2803, -1259, 2803, -1239, 2654, -1237, 2653, -1257)
+
+[node name="Visuals19" parent="Node2D" unique_id=1203126920 instance=ExtResource("2_ukl56")]
+position = Vector2(272, 175)
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(2803, -1259, 2803, -1239, 2654, -1237, 2653, -1257)
+
+[node name="Visuals" parent="." unique_id=750270605 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1278, 567, 1284, 709, 1034, 741, 584, 718, 88, 732, -179, 668, -165, 466, -179, 245, -110, 11, 221, 6, 905, -26, 1737, 34, 2371, -12, 2638, 6, 2610, -122, 2606, -283, 2780, -288, 2771, -17, 2849, 6, 3106, 6, 3093, 135, 2367, 121, 2390, 305, 2210, 310, 2210, 103, -4, 117, -4, 567, 625, 558, 630, 415, 809, 415, 804, 558)
+
+[node name="Visuals2" parent="." unique_id=347165091 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(2145, 390, 2157, 723, 1461, 724, 1459, 563, 1981, 566, 1976, 377)
+
+[node name="Visuals3" parent="." unique_id=1433560476 instance=ExtResource("2_ukl56")]
+texture = ExtResource("4_osnen")
+polygon = PackedVector2Array(11, 130, -18, 133, -23, 577, 8, 582)
+
+[node name="Visuals4" parent="." unique_id=874899280 instance=ExtResource("2_ukl56")]
+position = Vector2(1514.104, -593.653)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1421.896, 493.653, 1589.896, 493.653, 1589.896, -272.347, 1417.896, -270.347)
+
+[node name="Visuals5" parent="." unique_id=1935924042 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(2160, -1104, 2616, -1355, 2616, -288, 2786, -291, 2786, -1453, 2748, -1533, 2129, -1172)
+
+[node name="Visuals6" parent="." unique_id=42561609 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(3197, -873, 4628, -1317, 4652, -1247, 3228, -798)
+
+[node name="Visuals7" parent="." unique_id=1992276080 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(2935, -1026, 3098, -1032, 3098, -1483, 3517, -1739, 3921, -1962, 3879, -2025, 3447, -1762, 2948, -1477, 2944, -1214)
+
+[node name="Visuals8" parent="." unique_id=856691936 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(3994, -2032, 3922, -2070, 4053, -2343, 4208, -2716, 4243, -2723, 4298, -2699, 4139, -2308)
+
+[node name="Visuals9" parent="." unique_id=887233974 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(4381, -2750, 4409, -2828, 3581, -3126, 3562, -3063, 3873, -2925)
+
+[node name="Visuals11" parent="." unique_id=1600843870 instance=ExtResource("2_ukl56")]
+position = Vector2(2960.78, -1688.7396)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(939.22, -1129.2604, 941.22, -786.2604, 127.21997, -52.260376, 79.21997, -101.260376, 538.22, -517.2604, 869.22, -777.2604, 841.22, -971.2604, 852.22, -1134.2604)
+
+[node name="Visuals12" parent="." unique_id=747095812 instance=ExtResource("2_ukl56")]
+position = Vector2(3743.1, -2492.2998)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(-740.1001, 840.2998, -1345.1001, -274.7002, -1497.1001, -188.7002, -885.1001, 912.2998)
+
+[node name="Visuals13" parent="." unique_id=738675917 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1191, -1438, 1200, -1241, 1595, -1153, 1963, -1112, 1967, -1015, 1228, -1135, 1071, -1153, 1094, -1434)
+
+[node name="Visuals14" parent="." unique_id=1553004052 instance=ExtResource("2_ukl56")]
+position = Vector2(1213.7155, -1240.5437)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(436.28455, -59.4563, 953.28455, -815.4563, 878.28455, -858.4563, 659.28455, -519.4563, 428.28455, -205.4563, 365.28455, -105.4563)
+
+[node name="Visuals15" parent="." unique_id=1910504882 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1917, -2106, 1906, -2105, 1907, -2529, 1919, -2529)
+
+[node name="Visuals17" parent="." unique_id=1315398180 instance=ExtResource("2_ukl56")]
+position = Vector2(-547, -552)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1917, -2106, 1906, -2105, 1907, -2529, 1919, -2529)
+
+[node name="Visuals16" parent="." unique_id=268239800 instance=ExtResource("2_ukl56")]
+position = Vector2(-280, -272)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1917, -2106, 1906, -2105, 1907, -2529, 1919, -2529)
+
+[node name="Visuals18" parent="." unique_id=1322869628 instance=ExtResource("2_ukl56")]
+position = Vector2(-427, -915)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1917, -2106, 1906, -2105, 1907, -2529, 1919, -2529)
+
+[node name="Visuals19" parent="." unique_id=1163448089 instance=ExtResource("2_ukl56")]
+position = Vector2(-319, -1358)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1922, -2128, 1907, -2128, 1907, -2529, 1919, -2529)
+
+[node name="Visuals20" parent="." unique_id=181963262 instance=ExtResource("2_ukl56")]
+position = Vector2(367, -1282)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1922, -2128, 1893, -2128, 1895, -2564, 1924, -2564)
+
+[node name="Visuals21" parent="." unique_id=296389946 instance=ExtResource("2_ukl56")]
+position = Vector2(-1024.742, 375.23853)
+scale = Vector2(1.8709677, 1.4954128)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1922, -2128, 1893, -2128, 1895, -2564, 1924, -2564)
+
+[node name="Visuals22" parent="." unique_id=1054086824 instance=ExtResource("2_ukl56")]
+position = Vector2(810, -178)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1905.9653, -2121.822, 1886, -2141, 2045, -2307, 2296, -2574, 2320, -2550)
+
+[node name="Visuals23" parent="." unique_id=2085425436 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1972, -3716, 2030, -3710, 2030, -4360, 1976, -4362, 1972, -4000)
+
+[node name="Visuals24" parent="." unique_id=1258567388 instance=ExtResource("2_ukl56")]
+texture = ExtResource("6_djr8b")
+polygon = PackedVector2Array(1708, -3937, 1659, -3931, 1663, -4411, 1656, -4794, 1475, -4796, 1339, -4791, 1329, -4959, 1638, -4975, 1960, -4965, 2023, -4959, 2029, -4789, 1834, -4793, 1712, -4786, 1709, -4482, 1712, -4039)
+
+[node name="Visuals25" parent="." unique_id=448400374 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1290, -4775, 1290, -4818, 601, -4818, -1, -4824, 5, -4782, 1019, -4778)
+
+[node name="Visuals26" parent="." unique_id=2047720330 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1410, -4588, 1408, -4550, 1024, -4545, 650, -4550, 650, -4586, 1034, -4587)
+
+[node name="Visuals27" parent="." unique_id=805675897 instance=ExtResource("2_ukl56")]
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(1940, -4589, 2329, -4594, 2638, -4591, 2706, -4592, 2705, -4559, 2501, -4557, 2268, -4558, 1938, -4555)
+
+[node name="Visuals28" parent="." unique_id=378299296 instance=ExtResource("2_ukl56")]
+position = Vector2(1932, -4581)
+texture = ExtResource("3_vpl2n")
+polygon = PackedVector2Array(140, -234, 835, -233, 1265, -236, 1432, -234, 1430, -200, 1028, -196, 697, -199, 219, -198, 137, -194)
