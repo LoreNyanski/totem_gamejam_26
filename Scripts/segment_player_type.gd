@@ -39,8 +39,6 @@ func _physics_process(delta: float) -> void:
 				if surface is not Char2DSeg:
 					if surface is Ungrippable: continue
 					start_grip(surface)
-					continue
-					
 	if Input.is_action_just_released(grip_action):
 		end_grip()
 		
