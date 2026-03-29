@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var radius: int = 75
+@export var radius: int = 150
 
 
 func _input(event: InputEvent) -> void:

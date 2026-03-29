@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dtg11cld3kvh"]
+
+[ext_resource type="Script" uid="uid://pjrs5jstb3cu" path="res://segment_player_type.gd" id="1_a2a7h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6nglp"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=251455790 node_paths=PackedStringArray("grip_rays")]
+floor_stop_on_slope = false
+floor_max_angle = 1.0506883
+script = ExtResource("1_a2a7h")
+grip_rays = [NodePath("Pivot/Grip_ray"), NodePath("Pivot/Grip_ray2"), NodePath("Pivot/Grip_ray3"), NodePath("Pivot/Grip_ray4"), NodePath("Pivot/Grip_ray5"), NodePath("Pivot/Grip_ray6"), NodePath("Pivot/Grip_ray7"), NodePath("Pivot/Grip_ray8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=105376441]
+shape = SubResource("CircleShape2D_6nglp")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=2051841435]
+
+[node name="Grip_ray5" type="RayCast2D" parent="Pivot" unique_id=1988052876]
+target_position = Vector2(-9, 10)
+
+[node name="Grip_ray6" type="RayCast2D" parent="Pivot" unique_id=103821135]
+target_position = Vector2(-10, -9)
+
+[node name="Grip_ray7" type="RayCast2D" parent="Pivot" unique_id=415275707]
+target_position = Vector2(10, -9)
+
+[node name="Grip_ray8" type="RayCast2D" parent="Pivot" unique_id=838679124]
+target_position = Vector2(9, 10)
+
+[node name="Grip_ray4" type="RayCast2D" parent="Pivot" unique_id=40225582]
+target_position = Vector2(15, 0)
+
+[node name="Grip_ray3" type="RayCast2D" parent="Pivot" unique_id=970250265]
+target_position = Vector2(0, -15)
+
+[node name="Grip_ray2" type="RayCast2D" parent="Pivot" unique_id=976493587]
+target_position = Vector2(-15, 0)
+
+[node name="Grip_ray" type="RayCast2D" parent="Pivot" unique_id=1540575679]
+target_position = Vector2(0, 15)
