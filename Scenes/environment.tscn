@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5hkj05beon4"]
 
-[ext_resource type="Script" uid="uid://38ufnkeobyf2" path="res://Scripts/ungrippable.gd" id="3_a65fu"]
+[ext_resource type="Script" path="res://Scripts/ungrippable.gd" id="3_a65fu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c24xt"]
 size = Vector2(1267.5, 169)
@@ -250,17 +250,9 @@ shape = SubResource("RectangleShape2D_0lys8")
 position = Vector2(532.5, -5377)
 shape = SubResource("RectangleShape2D_ewsca")
 
-[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D" unique_id=1855222278]
-position = Vector2(2623, -7260)
-shape = SubResource("RectangleShape2D_3yocm")
-
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D" unique_id=2131995078]
 position = Vector2(1372, -3811)
 shape = SubResource("RectangleShape2D_vbjpg")
-
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D" unique_id=1374957456]
-position = Vector2(2731, -7665)
-shape = SubResource("RectangleShape2D_3yocm")
 
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D" unique_id=1460445564]
 position = Vector2(1480, -4267)
@@ -311,7 +303,11 @@ offset_left = 78.0
 offset_top = 260.0
 offset_right = 467.0
 offset_bottom = 567.0
-text = "EXPLAIN CONTROLS
+text = "Use 'A', 'S','D','F', and 'G' to grip each
+ segment of the Caterpillar
+
+
+Avoid the plastic - it does not allow you to stick 
 "
 
 [node name="Ungrippable" type="StaticBody2D" parent="." unique_id=1626571574]
@@ -443,3 +439,18 @@ debug_color = Color(0.9482073, 4.042983e-06, 0.5817702, 0.41960785)
 position = Vector2(-64, 353.5)
 shape = SubResource("RectangleShape2D_kddb2")
 debug_color = Color(0.9482073, 4.042983e-06, 0.5817702, 0.41960785)
+
+[node name="Label3" type="Label" parent="." unique_id=888779811]
+offset_left = 863.0
+offset_top = 243.0
+offset_right = 1252.0
+offset_bottom = 550.0
+text = "Use mouse movement to propel 
+ungripped segments"
+
+[node name="Label4" type="Label" parent="." unique_id=438619618]
+offset_left = 1573.0
+offset_top = 250.0
+offset_right = 1962.0
+offset_bottom = 557.0
+text = "Use grippers to stick to the ceiling"

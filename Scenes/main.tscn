@@ -15,4 +15,4 @@ position = Vector2(188, -900)
 position = Vector2(1863, -5932)
 
 [node name="CaterThePillar" parent="." unique_id=1528928944 instance=ExtResource("3_8gbba")]
-position = Vector2(1588, -5898)
+position = Vector2(519, -360)
