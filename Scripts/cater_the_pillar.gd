@@ -2,11 +2,12 @@ extends Node2D
 @export var segments: Array[Char2DSeg]
 #@onready var cursor: Node2D = $Middle/Cursor
 @onready var cursor: Node2D = $CharacterBody2D3/Cursor
+@onready var level_end_goal: Area2D = $"../LevelEndGoal"
+@onready var dead_zone: StaticBody2D = $"../DeadZone"
 
 @export var K = 50
 @export var D : int
-
-var saved_velocity: Vector2 = Vector2.ZERO
+var death_y = 2500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +15,23 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
+func _process(delta: float) -> void:
+	#If completed ->get_tree().change_scene_to_file("res://Scenes/mainMenu.tscn")
+	var all_inside = true
+
+	for seg in segments:
+		if seg.global_position.y > death_y:
+			#play death sounds
+			get_tree().change_scene_to_file("res://Scenes/main.tscn")
+			pass
+		if not level_end_goal.overlaps_body(seg):
+			all_inside = false
+			break
+
+	if all_inside:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file("res://Scenes/mainMenu.tscn")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	for n in segments.size()-1:

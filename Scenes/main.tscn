@@ -2,10 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://b5hkj05beon4" path="res://Scenes/environment.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://ddl7r38ecgb84" path="res://Scenes/cater_the_pillar.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://co8lvlti3cnuj" path="res://Scenes/LevelEndGoal.tscn" id="3_jjvhh"]
 
 [node name="Main" type="Node" unique_id=33247047]
 
 [node name="Environment" parent="." unique_id=1397730141 instance=ExtResource("2_8gbba")]
 
 [node name="CaterThePillar" parent="." unique_id=1528928944 instance=ExtResource("3_8gbba")]
-position = Vector2(-482, -557)
+position = Vector2(-1407, 505)
+
+[node name="Label" type="Label" parent="." unique_id=2013093381]
+offset_left = 1036.0
+offset_top = 18.0
+offset_right = 1108.0
+offset_bottom = 100.0
+text = "T"
+
+[node name="LevelEndGoal" parent="." unique_id=98937548 instance=ExtResource("3_jjvhh")]
+position = Vector2(451, -856)

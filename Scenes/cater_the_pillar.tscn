@@ -77,6 +77,11 @@ sprite_frames = SubResource("SpriteFrames_07a5l")
 position = Vector2(33, -1)
 grip_action = "Grip3"
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D3" unique_id=1410373683 node_paths=PackedStringArray("followed_node")]
+position = Vector2(-33, 1)
+script = ExtResource("6_rrfg7")
+followed_node = NodePath("..")
+
 [node name="Cursor" type="Node2D" parent="CharacterBody2D3" unique_id=1894818092]
 script = ExtResource("3_seccu")
 radius = 120
@@ -105,7 +110,3 @@ grip_action = "Grip5"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D5" unique_id=1645669859]
 visible = false
 sprite_frames = SubResource("SpriteFrames_e4g3q")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1410373683 node_paths=PackedStringArray("followed_node")]
-script = ExtResource("6_rrfg7")
-followed_node = NodePath("../CharacterBody2D3")

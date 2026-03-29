@@ -38,8 +38,6 @@ func _physics_process(delta: float) -> void:
 			if surface != null: 
 				if surface is not Char2DSeg: 
 					start_grip(surface)
-					continue
-					
 	if Input.is_action_just_released(grip_action):
 		end_grip()
 		
