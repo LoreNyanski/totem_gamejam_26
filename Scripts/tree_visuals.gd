@@ -17,21 +17,34 @@ extends Polygon2D
 
 @export var animate: bool = true
 @export var animation_speed: float = 2.0
+@export var texture_animation_speed: float = 1.0
+@export var texture_offset_change: Vector2 = Vector2(10, 20)
 
 var noise := FastNoiseLite.new()
 var time := 0.0
 
 @onready var outer_mesh := $MeshInstance2D
 @onready var inner_mesh := $MeshInstance2D2
+@onready var timer: Timer = $Timer
 
 func _ready():
 	noise.frequency = 0.2
 	update_outline()
-
+	if animate: 
+		timer.wait_time = texture_animation_speed
+		timer.start()
+		
 func _process(delta):
 	if animate:
 		time += delta * animation_speed
 		update_outline()
+
+func update_texture():
+	var tween = create_tween()
+	tween.tween_property(self, "texture_offset", texture_offset + texture_offset_change, 0.1)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_QUAD)
+	texture_offset += texture_offset_change
 
 func update_outline():
 	
